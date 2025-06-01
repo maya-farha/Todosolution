@@ -12,7 +12,6 @@ taskService = service;
 public IActionResult Index()
 {
 var tasks = taskService.GetTasks();
-
 return View(tasks);
 }
 [HttpPost]
@@ -33,6 +32,7 @@ return RedirectToAction("Index");
 public IActionResult DeleteTask(int id)
 {
 //TaskService استدعاء دالة حذف المهمة في :TODO
+taskService.DeleteTask(id);
 return RedirectToAction("Index");
 }
 }

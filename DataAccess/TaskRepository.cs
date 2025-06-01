@@ -26,8 +26,11 @@ return tasks.FirstOrDefault(t => t.Id == id);
 //تنفيذ دالة حذف المهمة :TODO 
 public void Delete(int id)
 {
-//id ابحث عن المهمة باستخدام :TODO //
-//إذا كانت المهمة موجودة، قم بإزالتها من القائمة :TODO //
+var task = tasks.FirstOrDefault(t => t.Id == id); 
+if (task != null)
+{
+     tasks.Remove(task);
+}
 }
 }
 }

@@ -3,33 +3,177 @@
 <html dir="rtl">
 <head>
     <meta charset="utf-8" />
-    <title>إدارة المهام n-tier</title>
+    <title>إدارة المهام n-tier - تصميم مودرن</title>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f2f5;
+            margin: 40px auto;
+            direction: rtl;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            margin: 0% auto;
+        }
+
+        thead tr th {
+            text-align: right;
+            padding: 12px 20px;
+            background: #4a90e2;
+            color: white;
+            font-weight: 600;
+        }
+
+        tbody tr {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: transform 0.15s ease-in-out;
+        }
+
+        tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        tbody tr td {
+            padding: 15px 20px;
+            vertical-align: middle;
+            text-align: right;
+            font-size: 1rem;
+            border-bottom: none !important;
+        }
+
+        s {
+            color: #999;
+        }
+
+        .status {
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: white;
+            user-select: none;
+        }
+
+        .status.completed {
+            background-color: #27ae60;
+        }
+
+        .status.pending {
+            background-color: #f39c12;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            background: #e74c3c;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background: #c0392b;
+            box-shadow: 0 6px 16px rgba(192, 57, 43, 0.5);
+        }
+
+        form.add-task-form {
+            margin-top: 40px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form.add-task-form input[type="text"] {
+            width: 250px;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 2px solid #4a90e2;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        form.add-task-form input[type="text"]:focus {
+            border-color: #357ABD;
+            box-shadow: 0 0 8px rgba(53, 122, 189, 0.4);
+        }
+
+        form.add-task-form button {
+            background-color: #4a90e2;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+        }
+
+        form.add-task-form button:hover {
+            background-color: #357ABD;
+            box-shadow: 0 6px 16px rgba(53, 122, 189, 0.5);
+        }
+    </style>
 </head>
 <body>
     <h1>المهام القائمة (n-tier)</h1>
-    <ul>
-        @foreach (var task in Model)
-        {
-            <li>
-                @if (task.IsComplete)
-                {
-                    <s> @task.Id: @task.Title </s>
-                }
-                else
-                {
-                    <span> @task.Id: @task.Title </span>
-                    <form method="post" asp-action="CompleteTask" style="display:inline;">
-                        <input type="hidden" name="id" value="@task.Id" />
-                        <button type="submit"> اكتملت</button>
-                    </form>
-                }
-            </li>
-        }
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>رقم المهمة</th>
+                <th>عنوان المهمة</th>
+                <th>الحالة</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.Id</td>
+                    <td>
+                        @if (task.IsComplete)
+                        {
+                            <s>@task.Title</s>
+                        }
+                        else
+                        {
+                            @task.Title
+                        }
+                    </td>
+                    <td>
+                        <span class="status @(task.IsComplete ? "completed" : "pending")">
+                            @(task.IsComplete ? "مكتملة" : "قيد التنفيذ")
+                        </span>
+                    </td>
+                    <td>
+                        <form method="post" asp-action="DeleteTask" onsubmit="return confirm('هل أنت متأكد من حذف المهمة؟');">
+                            <input type="hidden" name="id" value="@task.Id" />
+                            <button type="submit">حذف</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-    <form method="post" asp-action="AddTask">
-        <input type="text" name="title" placeholder="إضافة مهمة جديدة" />
-        <button type="submit"> إضافة</button>
+    <form method="post" asp-action="AddTask" class="add-task-form">
+        <input type="text" name="title" placeholder="إضافة مهمة جديدة" required />
+        <button type="submit">إضافة</button>
     </form>
 </body>
 </html>
