@@ -1,0 +1,16 @@
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.csproj.AssemblyReference.cache
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.AssemblyInfoInputs.cache
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.AssemblyInfo.cs
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.csproj.CoreCompileInputs.cache
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.sourcelink.json
+D:\university\homework\TodoSolution\Business\bin\Debug\net9.0\Business.deps.json
+D:\university\homework\TodoSolution\Business\bin\Debug\net9.0\Business.dll
+D:\university\homework\TodoSolution\Business\bin\Debug\net9.0\Business.pdb
+D:\university\homework\TodoSolution\Business\bin\Debug\net9.0\DataAccess.dll
+D:\university\homework\TodoSolution\Business\bin\Debug\net9.0\DataAccess.pdb
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.csproj.Up2Date
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.dll
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\refint\Business.dll
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\Business.pdb
+D:\university\homework\TodoSolution\Business\obj\Debug\net9.0\ref\Business.dll

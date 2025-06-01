@@ -1,0 +1,35 @@
+﻿@model List<NTierTodoApp.Models.TaskItem>
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>إدارة المهام n-tier</title>
+</head>
+<body>
+    <h1>المهام القائمة (n-tier)</h1>
+    <ul>
+        @foreach (var task in Model)
+        {
+            <li>
+                @if (task.IsComplete)
+                {
+                    <s> @task.Id: @task.Title </s>
+                }
+                else
+                {
+                    <span> @task.Id: @task.Title </span>
+                    <form method="post" asp-action="CompleteTask" style="display:inline;">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <button type="submit"> اكتملت</button>
+                    </form>
+                }
+            </li>
+        }
+    </ul>
+
+    <form method="post" asp-action="AddTask">
+        <input type="text" name="title" placeholder="إضافة مهمة جديدة" />
+        <button type="submit"> إضافة</button>
+    </form>
+</body>
+</html>

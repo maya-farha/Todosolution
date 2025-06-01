@@ -1,0 +1,12 @@
+D:\university\homework\TodoSolution\DataAccess\bin\Debug\net9.0\DataAccess.deps.json
+D:\university\homework\TodoSolution\DataAccess\bin\Debug\net9.0\DataAccess.dll
+D:\university\homework\TodoSolution\DataAccess\bin\Debug\net9.0\DataAccess.pdb
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.AssemblyInfoInputs.cache
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.AssemblyInfo.cs
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.sourcelink.json
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.dll
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\refint\DataAccess.dll
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\DataAccess.pdb
+D:\university\homework\TodoSolution\DataAccess\obj\Debug\net9.0\ref\DataAccess.dll
